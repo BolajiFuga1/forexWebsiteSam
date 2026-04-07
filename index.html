@@ -1,19 +1,305 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpotRates — USD, NGN, GBP, EUR</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nimbus — Money, made effortless</title>
+  <meta name="description" content="Nimbus is a modern fintech app for effortless money management: instant transfers, smart budgets, and high-yield savings — all in one secure app.">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23ffffff' d='M128 20c59.6 0 108 48.4 108 108s-48.4 108-108 108S20 187.6 20 128 68.4 20 128 20zm0 34c-40.9 0-74 33.1-74 74s33.1 74 74 74 74-33.1 74-74-33.1-74-74-74z'/%3E%3C/svg%3E">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Nimbus Home">
+        <span class="brand-mark" aria-hidden="true">⛈️</span>
+        <span class="brand-name">Nimbus</span>
+      </a>
+      <nav class="primary-nav" aria-label="Primary">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <ul id="navMenu" class="nav-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#security">Security</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="download-link" href="#download">Download</a></li>
+        </ul>
+      </nav>
+      <div class="header-cta">
+        <a class="btn btn-outline" href="#pricing">Get started</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Modern Fintech</p>
+          <h1>Money, made effortless</h1>
+          <p class="subhead">Manage spending, savings, and investing from one secure app. Instant transfers, smart budgets, and insights that work for you.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#pricing">Open account</a>
+            <a class="btn btn-ghost" href="#download">Download app</a>
+          </div>
+          <div class="trust-row" aria-label="Trusted by">
+            <span class="trust-label">Trusted by teams at</span>
+            <ul class="logo-row" aria-hidden="true">
+              <li>Atlas</li>
+              <li>Zephyr</li>
+              <li>Solstice</li>
+              <li>NorthPeak</li>
+              <li>Wildfire</li>
+            </ul>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-stack">
+            <div class="hero-card">
+              <div class="hero-card-top">
+                <span class="tag">New</span>
+                <span class="tag ghost">Limited drop</span>
+              </div>
+              <ul class="txn-list">
+                <li>
+                  <span class="txn-icon deposit" title="Deposit"></span>
+                  <span class="txn-name">Paycheck</span>
+                  <span class="txn-amount positive">+ $2,850.00</span>
+                </li>
+                <li>
+                  <span class="txn-icon card" title="Card"></span>
+                  <span class="txn-name">Groceries</span>
+                  <span class="txn-amount negative">- $86.74</span>
+                </li>
+                <li>
+                  <span class="txn-icon transfer" title="Transfer"></span>
+                  <span class="txn-name">Rent</span>
+                  <span class="txn-amount negative">- $1,450.00</span>
+                </li>
+                <li>
+                  <span class="txn-icon savings" title="Savings"></span>
+                  <span class="txn-name">Auto-save</span>
+                  <span class="txn-amount neutral">$300.00</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container section-header">
+        <h2>Everything you need to move money</h2>
+        <p class="section-sub">From daily spending to long-term saving — all in one delightful app.</p>
+      </div>
+      <div class="container feature-grid">
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true">⚡</div>
+          <h3>Instant transfers</h3>
+          <p>Send and receive money in seconds with zero hidden fees.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true">📊</div>
+          <h3>Smart budgets</h3>
+          <p>Track spending by category and keep goals on autopilot.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true">🛡️</div>
+          <h3>Bank‑grade security</h3>
+          <p>Biometric login, device binding, and 256‑bit encryption.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true">🌎</div>
+          <h3>Global cards</h3>
+          <p>Virtual and physical cards with the best FX rates.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true">📈</div>
+          <h3>High‑yield savings</h3>
+          <p>Earn up to 4.25% APY with auto‑save rules.</p>
+        </article>
+        <article class="feature-card">
+          <div class="icon" aria-hidden="true">🔁</div>
+          <h3>Bills & subscriptions</h3>
+          <p>Manage recurring payments and avoid surprise charges.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="security split" id="security">
+      <div class="container split-inner">
+        <div class="split-copy">
+          <p class="eyebrow">Security & Compliance</p>
+          <h2>Peace of mind by default</h2>
+          <ul class="checklist">
+            <li>PCI‑DSS compliant card data handling</li>
+            <li>End‑to‑end encryption for sensitive operations</li>
+            <li>Real‑time fraud monitoring and 3D Secure</li>
+            <li>Deposits held at FDIC‑insured banks up to $250,000</li>
+          </ul>
+        </div>
+        <div class="split-visual" aria-hidden="true">
+          <div class="shield">
+            <div class="shield-core"></div>
+            <div class="shield-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+      <div class="container section-header">
+        <h2>Simple, transparent pricing</h2>
+        <p class="section-sub">Start free. Upgrade anytime.</p>
+      </div>
+      <div class="container pricing-grid">
+        <article class="price-card">
+          <h3>Free</h3>
+          <p class="price"><span class="currency">$</span>0<span class="per">/mo</span></p>
+          <ul class="features-list">
+            <li>Instant transfers</li>
+            <li>Smart budgets</li>
+            <li>1 virtual card</li>
+          </ul>
+          <a class="btn btn-outline block" href="#download">Get Free</a>
+        </article>
+        <article class="price-card featured">
+          <div class="badge">Popular</div>
+          <h3>Plus</h3>
+          <p class="price"><span class="currency">$</span>9<span class="per">/mo</span></p>
+          <ul class="features-list">
+            <li>Everything in Free</li>
+            <li>High‑yield savings</li>
+            <li>3 virtual cards</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn-primary block" href="#download">Start Plus</a>
+        </article>
+        <article class="price-card">
+          <h3>Pro</h3>
+          <p class="price"><span class="currency">$</span>19<span class="per">/mo</span></p>
+          <ul class="features-list">
+            <li>Everything in Plus</li>
+            <li>Metal card</li>
+            <li>Unlimited virtual cards</li>
+            <li>Smart investing</li>
+          </ul>
+          <a class="btn btn-outline block" href="#download">Go Pro</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container testimonials-grid">
+        <figure class="testimonial">
+          <div class="avatar" aria-hidden="true">A</div>
+          <blockquote>
+            Nimbus replaced three apps for me. The budgeting insights are eerily good and transfers land instantly.
+          </blockquote>
+          <figcaption>Alex Rivera — Product Lead</figcaption>
+        </figure>
+        <figure class="testimonial">
+          <div class="avatar" aria-hidden="true">M</div>
+          <blockquote>
+            I stopped worrying about late fees. Auto‑save and bill tracking just work in the background.
+          </blockquote>
+          <figcaption>Mina Patel — Small Business Owner</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="cta" id="download">
+      <div class="container cta-inner">
+        <div class="cta-copy">
+          <h2>Join 250,000+ people moving money with Nimbus</h2>
+          <p>Get early access and a download link to the app.</p>
+        </div>
+        <form class="cta-form" id="ctaForm" aria-label="Join waitlist">
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" name="email" type="email" inputmode="email" placeholder="Enter your email" required>
+          <button class="btn btn-primary" type="submit">Get invite</button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container section-header">
+        <h2>Frequently asked questions</h2>
+      </div>
+      <div class="container faq-list" role="list">
+        <details class="faq-item">
+          <summary>Is Nimbus a bank?</summary>
+          <p>Nimbus is a financial technology company. Banking services provided by partner banks; deposits are FDIC‑insured up to $250,000.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are there any hidden fees?</summary>
+          <p>No hidden fees. We show fees upfront and most transfers are free.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does Nimbus support business accounts?</summary>
+          <p>Yes. We offer business accounts with multi‑user controls and invoicing.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How do I switch from my current bank?</summary>
+          <p>Open an account in minutes and use our guided switch tool to move direct deposits and recurring payments.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#" aria-label="Nimbus Home">
+          <span class="brand-mark" aria-hidden="true">⛈️</span>
+          <span class="brand-name">Nimbus</span>
+        </a>
+        <p class="legal">© <span id="year"></span> Nimbus Financial Technologies. All rights reserved.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#security">Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Disclosures</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </footer>
+
+  <script defer src="script.js"></script>
+</body>
 </html>
+
+
+
+
